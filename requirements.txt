@@ -1,0 +1,5 @@
+streamlit==1.25.0
+streamlit-ace==0.1.1
+openai==0.27.8
+jsonschema==4.18.4
+jsonschema-specifications==2023.7.1
