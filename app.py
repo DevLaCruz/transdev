@@ -51,10 +51,10 @@ if st.button('Ejecutar'):
     r = request(model_details[model], prompt)
 
     if action == 'Explicar':
-        st.text_area(r)
+        st.write(r)
     else:
         output_content = st_ace(
-            value = r,
+            value=r,
             language=output_langague,
             theme='dracula',
             readonly=True)

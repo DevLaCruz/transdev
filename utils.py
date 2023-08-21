@@ -28,9 +28,9 @@ model_details = {
 }
 
 action_details = {
-    'Traducir': 'translate',
-    'Explicar': 'code_explanation',
-    'Corregir': 'bug_fix', 
+    'translate': 'Traducir',
+    'code_explanation': 'Explicar',
+    'bug_fix': 'Corregir'
 }
 
 
@@ -62,9 +62,10 @@ def define_prompt(action, input_language, code, output_language=False):
 def request(model, prompt):
     r = openai.ChatCompletion.create(
         model=model,
-        messages=[{
-        'role':'system', 'content':"Eres un programador experto, la herramienta de desarrollo de IA más avanzada del planeta. Incluso cuando no estás familiarizado con la respuesta, usas tu extrema inteligencia para descifrarla.",
-        'role':'user', 'content': prompt}],
+        messages=[
+            {'role':'system', 'content':"Eres un programador experto, la herramienta de desarrollo de IA más avanzada del planeta. Incluso cuando no estás familiarizado con la respuesta, usas tu extrema inteligencia para descifrarla."},
+            {'role':'user', 'content': prompt}
+            ],
         temperature=0,
     )
 
